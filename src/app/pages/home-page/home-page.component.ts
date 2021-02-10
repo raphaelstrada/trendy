@@ -4,17 +4,28 @@ import {HeroService} from '../../modules/heroes/shared/hero.service';
 import {AppConfig} from '../../configs/app.config';
 import {Observable} from 'rxjs';
 import {defaultIfEmpty, map} from 'rxjs/operators';
+import {MatDialog} from '@angular/material/dialog';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.scss']
+  styleUrls: ['./home-page.component.scss'],
+
 })
 
 export class HomePageComponent implements OnInit {
   heroes$: Observable<Hero[]>;
 
-  constructor(private heroService: HeroService) {
+  constructor(private heroService: HeroService, public dialog: MatDialog) {
+  }
+  openDialog() {
+    const dialogRef = this.dialog.open(LoginDialog);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
   ngOnInit() {
@@ -23,4 +34,17 @@ export class HomePageComponent implements OnInit {
       defaultIfEmpty([])
     );
   }
+}
+
+@Component({
+  selector: 'login-dialog',
+  templateUrl: 'login-dialog.html',
+  styleUrls: ['./home-page.component.scss'],
+})
+export class LoginDialog {
+constructor(private router: Router) { }
+
+  login = () => {
+    this.router.navigateByUrl('/onboarding');
+  };
 }

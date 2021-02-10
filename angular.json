@@ -54,7 +54,7 @@
               "i18nFile": "src/i18n/messages.en.xlf",
               "i18nFormat": "xlf",
               "i18nLocale": "en",
-              "i18nMissingTranslation": "error",
+              "i18nMissingTranslation": "warn",
               "assets": [
                 {
                   "glob": "**/*",
@@ -79,7 +79,7 @@
               "i18nFile": "src/i18n/messages.es.xlf",
               "i18nFormat": "xlf",
               "i18nLocale": "es",
-              "i18nMissingTranslation": "error",
+              "i18nMissingTranslation": "warn",
               "assets": [
                 {
                   "glob": "**/*",
@@ -142,7 +142,7 @@
               "i18nFile": "src/i18n/messages.en.xlf",
               "i18nFormat": "xlf",
               "i18nLocale": "en",
-              "i18nMissingTranslation": "error"
+              "i18nMissingTranslation": "warnr"
             },
             "production-es": {
               "fileReplacements": [
@@ -172,7 +172,7 @@
               "i18nFile": "src/i18n/messages.es.xlf",
               "i18nFormat": "xlf",
               "i18nLocale": "es",
-              "i18nMissingTranslation": "error"
+              "i18nMissingTranslation": "warnr"
             }
           }
         },
@@ -254,7 +254,7 @@
               "i18nFile": "src/i18n/messages.en.xlf",
               "i18nFormat": "xlf",
               "i18nLocale": "en",
-              "i18nMissingTranslation": "error",
+              "i18nMissingTranslation": "warn",
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -267,7 +267,7 @@
               "i18nFile": "src/i18n/messages.es.xlf",
               "i18nFormat": "xlf",
               "i18nLocale": "es",
-              "i18nMissingTranslation": "error",
+              "i18nMissingTranslation": "warn",
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",

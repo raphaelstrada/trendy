@@ -1,11 +1,11 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: 'AIzaSyC4RNNlqXSwTM1Kt6Pbgutq2yuavSQ9WnU',
-    authDomain: 'ismaestro-angularexampleapp.firebaseapp.com',
-    databaseURL: 'https://ismaestro-angularexampleapp.firebaseio.com',
-    projectId: 'ismaestro-angularexampleapp',
-    storageBucket: 'ismaestro-angularexampleapp.appspot.com',
-    messagingSenderId: '965114235515'
+    apiKey: 'AIzaSyD9V-JuaVxzuhoM8Q0nw14-0oA7nAoyGsY',
+    authDomain: 'trendy-41a39.firebaseapp.com',
+    databaseURL: 'https://trendy-41a39.firebaseio.com',
+    projectId: 'trendy-41a39',
+    storageBucket: 'trendy-41a39.appspot.com',
+    messagingSenderId: '291398534483'
   }
 };

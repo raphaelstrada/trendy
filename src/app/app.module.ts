@@ -16,6 +16,7 @@ import {CookieModule} from 'ngx-cookie';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ROUTES_CONFIG, RoutesConfig} from './configs/routes.config';
 import {HomePageComponent} from './pages/home-page/home-page.component';
+import {LoginDialog} from './pages/home-page/home-page.component';
 import {Error404PageComponent} from './pages/error404-page/error404-page.component';
 import {ENDPOINTS_CONFIG, EndpointsConfig} from './configs/endpoints.config';
 import {LazyLoadImageModule} from 'ng-lazyload-image';
@@ -65,9 +66,11 @@ export function appInitializer(document: HTMLDocument, platformId: object) {
   ],
   declarations: [
     HomePageComponent,
+    LoginDialog,
     Error404PageComponent,
     AppComponent
   ],
+  entryComponents: [LoginDialog],
   providers: [
     {provide: APP_CONFIG, useValue: AppConfig},
     {provide: ROUTES_CONFIG, useValue: RoutesConfig},
