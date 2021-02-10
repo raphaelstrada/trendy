@@ -21,7 +21,7 @@ export class HomePageComponent implements OnInit {
   constructor(private heroService: HeroService, public dialog: MatDialog) {
   }
   openDialog() {
-    const dialogRef = this.dialog.open(LoginDialog);
+    const dialogRef = this.dialog.open(LoginDialogComponent);
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
@@ -37,14 +37,14 @@ export class HomePageComponent implements OnInit {
 }
 
 @Component({
-  selector: 'login-dialog',
-  templateUrl: 'login-dialog.html',
+  selector: 'app-login-dialog',
+  templateUrl: 'login-dialog.component.html',
   styleUrls: ['./home-page.component.scss'],
 })
-export class LoginDialog {
+export class LoginDialogComponent {
 constructor(private router: Router) { }
 
   login = () => {
     this.router.navigateByUrl('/onboarding');
-  };
+  }
 }
