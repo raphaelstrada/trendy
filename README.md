@@ -28,5 +28,5 @@ Repo: `https://github.com/raphaelstrada/trendy`
 
 *if you prefer, clone repo then npm i and start, or...*
 
-Visit 👉 [https://trendymusic.herokuapp.com/](https://trendymusic.herokuapp.com/)
+Visit 👉 [https://validusre.herokuapp.com/](https://validusre.herokuapp.com/)
 
