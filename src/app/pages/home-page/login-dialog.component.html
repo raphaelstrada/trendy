@@ -1,6 +1,6 @@
 <div fxLayout="row" class="modal-bg">
-  <div fxFlex="10" fxFlex.gt-sm="20"></div>
-  <div fxFlex="90" fxFlex.gt-sm="80" class="full-center">
+
+  <div fxFlex="100" fxFlex.gt-sm="100" class="full-center">
     <div class="modal-logo">
       <svg xmlns="http://www.w3.org/2000/svg" width="52.567" height="55.814" viewBox="0 0 52.567 55.814">
         <g id="Group_1093" data-name="Group 1093" transform="translate(-211.937 -131.56)">
@@ -31,12 +31,13 @@
       </svg>
 
     </div>
-    <div class="text--center text--upper">
-      EVERYDAY A NEW MUSIC SELECTION MADE BY EXPERTS
-    </div>
     <mat-dialog-content class="mat-typography">
+      <div fxLayout="column" fxLayoutAlign="space-around center modal-bg">
 
-      <div class="text--center text--upper">
+
+        <div class="text--center text--upper modal-bottom-padding">
+          EVERYDAY A NEW MUSIC SELECTION MADE BY EXPERTS
+        </div>
         <!-- <mat-form-field id="search-input">
         <input matInput placeholder="username@email.com"/>
         <input matInput placeholder="********"/>
@@ -67,18 +68,20 @@
             </ng-template>
           </mat-error> -->
         </mat-form-field>
-        <button class="button__purple" mat-flat-button type="submit" (click)="login()" [mat-dialog-close]="true">
-        LOGIN
-      </button>
+        <button class="button__purple button-margin-top" mat-flat-button type="submit" (click)="login()"
+          [mat-dialog-close]="true">
+          LOGIN
+        </button>
         <!-- <mat-dialog-actions align="end">
           <button mat-button mat-dialog-close>Cancel</button>
           <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
         </mat-dialog-actions> -->
-        
+
+
 
       </div>
     </mat-dialog-content>
 
   </div>
-  <div fxFlex="10" fxFlex.gt-sm="20"></div>
+
 </div>

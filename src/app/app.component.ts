@@ -65,13 +65,13 @@ export class AppComponent implements OnInit {
   }
 
   checkBrowser() {
-    if (isPlatformBrowser(this.platformId)) {
-      if (UtilsHelperService.isBrowserValid()) {
-        this.checkBrowserFeatures();
-      } else {
-        this.snackBar.open(this.i18n({value: 'Change your browser', id: '@@changeBrowser'}), 'OK');
-      }
-    }
+    // if (isPlatformBrowser(this.platformId)) {
+    //   if (UtilsHelperService.isBrowserValid()) {
+    //     this.checkBrowserFeatures();
+    //   } else {
+    //     this.snackBar.open(this.i18n({value: 'Change your browser', id: '@@changeBrowser'}), 'OK');
+    //   }
+    // }
   }
 
   checkBrowserFeatures() {

@@ -90,7 +90,11 @@ pre {
 }
 .full-center{
   align-self: center;
-  min-height: 50vw;
+  //height: 50vw;
+}
+
+.full-height{
+  //align-self: flex-end;
 }
 
 .offline-error {

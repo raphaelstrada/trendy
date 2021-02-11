@@ -3,6 +3,11 @@ mat-card-title, mat-card-subtitle, .mat-card-image {
 }
 .modal-logo{
   text-align: center;
+  padding-bottom: 20px;
+}
+
+.modal-bottom-padding{
+  padding-bottom: 30px;
 }
 
 .modal-bg{
@@ -22,4 +27,8 @@ mat-card-title, mat-card-subtitle, .mat-card-image {
 
 .pad-button-logo{
   padding-top: 20vh;
+}
+
+.button-margin-top{
+  margin-top: 100px;
 }
