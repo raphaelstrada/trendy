@@ -1,0 +1,97 @@
+@import "mixins";
+
+drag-scroll {
+  height: 142px;
+  width: 95vw;
+}
+
+.division {
+  border-top: 1px solid #FFFFFF;
+}
+
+.invert {
+  font-size: 11px;
+  font-family: "Roboto";
+  text-align: right;
+
+  span {
+    color: $light-grey;
+    text-decoration: none;
+    pointer-events: all;
+    cursor: pointer;
+  }
+}
+
+.paginator {
+  margin-top: 30px;
+}
+
+// ::ng-deep .mat-paginator-container {
+//   display: flex;
+//   align-items: center;
+//   justify-content: flex-start;
+//   min-height: 56px;
+//   padding: 0 8px;
+//   flex-wrap: wrap-reverse;
+//   width: 100%;
+//   background-color: $black;
+//   color: $light-grey;
+
+//   *svg {
+//     background-color: $light-grey;
+//   }
+// }
+
+
+.pic-header {
+  min-height: 308px;
+  background-image: url('/assets/images/jack-car.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.logo-trendy {
+  right: 20px;
+  position: absolute;
+  bottom: 20px;
+}
+
+.album-selected {
+  border: 2px solid $red;
+}
+
+.count-white {
+  color: $light-grey;
+  font-size: 14px;
+  font-family: "Roboto";
+}
+
+.count-purple {
+  color: $purple;
+  font-size: 10px;
+  font-family: "Roboto";
+  text-transform: uppercase;
+}
+
+.avatar{
+  width: 88px;
+  height: 88px;
+}
+
+.song-purple {
+  a {
+    color: $purple;
+    font-size: 16px;
+    font-family: "Quicksand";
+    font-weight: bold;
+    text-decoration: none;
+    
+  }
+}
+
+.artist-white-small {
+  color: $light-grey;
+  font-size: 10px;
+  font-family: "Roboto";
+}

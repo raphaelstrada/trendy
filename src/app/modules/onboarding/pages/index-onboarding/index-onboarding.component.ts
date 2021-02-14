@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-index-onboarding',
@@ -7,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndexOnboardingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
+  goToPlayer = () => {
+    this.router.navigateByUrl('/player');
+  }
   ngOnInit() {
   }
 

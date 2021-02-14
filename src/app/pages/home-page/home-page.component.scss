@@ -8,10 +8,15 @@ mat-card-title, mat-card-subtitle, .mat-card-image {
 
 .modal-bottom-padding{
   padding-bottom: 30px;
+  font-size: 11px;
 }
 
 .modal-bg{
   min-height: 80vh;
+}
+
+.input-container{
+  width: 100%;
 }
 
 .bg{
@@ -30,5 +35,8 @@ mat-card-title, mat-card-subtitle, .mat-card-image {
 }
 
 .button-margin-top{
-  margin-top: 100px;
+  margin-top: 30px;
+}
+.button-margin-top2{
+  margin-top: 10px;
 }

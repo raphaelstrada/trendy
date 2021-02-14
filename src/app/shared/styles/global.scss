@@ -2,22 +2,73 @@
 
 * {
   @include font-roboto();
+  // @include font-quicksand();
+
 }
 
+body {
+  background-color: $black !important;
+}
 
-.mat-flat-button{
-  height:48px !important;
-  min-width:100px !important;
-  font-size:14px !important;
+.debug {
+  border: 1px solid #FF0000;
+}
+
+.full-size-width {
+  width: 100%;
+}
+
+.upper-white-small {
+  color: $light-grey;
+  font-size: 11px;
+  font-family: "Roboto";
+  text-transform: uppercase;
+}
+
+.album-list-container {
+  padding: 20px 0px 0px 0px;
+
+}
+
+.upper-purple-small {
+  color: $purple;
+  font-size: 11px;
+  font-family: "Roboto";
+  text-transform: uppercase;
+}
+
+.artist-title {
+  color: $light-grey;
+  font-size: 30px;
+  font-family: "Quicksand";
+  text-transform: uppercase;
+}
+
+.artist-title-small {
+  color: $light-grey;
+  font-size: 22px;
+  font-family: "Quicksand";
+  text-transform: uppercase;
+}
+
+.mat-flat-button,
+.mat-stroked-button {
+  height: 48px !important;
+  min-width: 100px !important;
+  font-size: 14px !important;
   text-transform: uppercase;
   font-weight: 400;
 }
 
-a, .cp {
+
+
+a,
+.cp {
   cursor: pointer;
 }
 
-h1, h2 {
+h1,
+h2 {
   margin-bottom: 2rem;
 }
 
@@ -56,10 +107,34 @@ h1, h2 {
 .text--upper {
   text-transform: uppercase;
 }
+
 .text--center {
   text-align: center;
 }
 
+.text--legend {
+  color: $dark-grey;
+  font-size: 11px;
+  font-family: "Roboto";
+}
+.text--regular {
+  color: $dark-grey;
+  font-size: 14px;
+  font-family: "Roboto";
+}
+
+.credits {
+  p {
+    color: $dark-grey;
+    font-size: 11px;
+    font-family: "Roboto";
+  }
+  a{
+    color: $red;
+    font-size: 13px;
+    font-family: "Roboto";
+  }
+}
 
 .text--right {
   text-align: right;
@@ -82,18 +157,20 @@ pre {
   text-align: left;
   word-wrap: break-word;
 }
-.mat-dialog-container{
-  background-color: #FFF!important;
-  color: #383838!important;
+
+.mat-dialog-container {
+  background-color: #FFF !important;
+  color: #383838 !important;
   min-width: 80vw;
   font-size: 11px;
 }
-.full-center{
+
+.full-center {
   align-self: center;
   //height: 50vw;
 }
 
-.full-height{
+.full-height {
   //align-self: flex-end;
 }
 
@@ -109,11 +186,19 @@ pre {
     display: inline-flex;
   }
 }
-.button__purple{
+
+.button__purple {
   width: 80%;
-  background-color: #DD18B0;
+  background-color: $red;
   color: #FFFFFF;
 }
+
+.button__white {
+  width: 80%;
+  background-color: #FFFFFF;
+  color: $red;
+}
+
 .language-link {
   color: white;
   text-decoration: none;

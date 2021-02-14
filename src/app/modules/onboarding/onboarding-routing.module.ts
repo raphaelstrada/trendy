@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IndexOnboardingComponent } from './pages/index-onboarding/index-onboarding.component';
 
 
+
 const onboardRoutes: Routes = [
   {path: '', component: IndexOnboardingComponent}
 ];

@@ -1,0 +1,96 @@
+<section class="album-section">
+  <div class="pic-header" (click)="openDialog()">
+    <img class="logo-trendy" src="/assets/images/logo-trendy.png">
+  </div>
+  <div class="album-list-container" fxLayoutAlign="center none">
+    <!-- <app-album *ngFor="let album of albums" [album]="album"></app-album> -->
+    <div fxFlex="95" fxLayout="column" fxLayoutAlign="space-around stretch">
+      <div fxLayout="column" fxLayoutAlign="stretch" fxLayoutGap="10px">
+        <div><span class="upper-white-small">09 FEB - </span><span class="upper-purple-small">TRENDY BY</span></div>
+        <div><span class="artist-title">JACK BLACK</span></div>
+        <div fxLayout="row" fxLayoutAlign="start none" fxLayoutGap="30px">
+          <div fxLayout="column" fxLayoutAlign="center none">
+            <div class="count-white text--center"><span *ngIf="($allSongCount)">{{ $allSongCount }}</span></div>
+            <div class="count-purple">Musics</div>
+          </div>
+          <div fxLayout="column" fxLayoutAlign="center none">
+            <div class="count-white text--center"><span *ngIf="(albums)">{{ albums.length }}</span></div>
+            <div class="count-purple">Albums</div>
+          </div>
+          <div fxLayout="column" fxLayoutAlign="center none">
+            <div class="count-white text--center"><span *ngIf="(artists)">{{ artists.length }}</span></div>
+            <div class="count-purple">Artists</div>
+          </div>
+        </div>
+      </div>
+      <!-- ARTISTS -->
+      <div fxLayout="column" fxLayoutAlign="stretch" [style.margin-top.px]="15" *ngIf="(artists)">
+        <div fxLayout="column" fxLayoutAlign="center none" fxLayoutGap="10px">
+          <div class="artist-title-small">ARTISTS</div>
+          <!-- //CAROUSEL -->
+          <drag-scroll>
+            <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="20px">
+
+              <div drag-scroll-item style="width: 93px; white-space: pre-wrap;"
+                [class.album-selected]="currentArtist && currentArtist[0].id === artist.id" fxLayout="column"
+                fxLayoutAlign="center none" *ngFor="let artist of artists; index as i">
+                <div><img src="{{ artist.cover }}" class="avatar" (click)="changeArtistHandle(artist); this.goToBottom();" />
+                </div>
+                <div class="count-white">{{ artist.name }}</div>
+                <!-- <div class="count-white">{{ currentArtist | json }}</div> -->
+              </div>
+
+            </div>
+          </drag-scroll>
+        </div>
+      </div>
+      <!-- ALBUMS -->
+      <div fxLayout="column" fxLayoutAlign="stretch" [style.margin-top.px]="15" *ngIf="(albums)">
+        <div fxLayout="column" fxLayoutAlign="center none" fxLayoutGap="10px">
+          <div class="artist-title-small">ALBUMS</div>
+          <!-- //CAROUSEL -->
+          <drag-scroll>
+            <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="20px">
+
+              <!-- <div [class.album-selected]="currentAlbums && currentAlbums[j] && currentAlbums[j].id === album.id" fxLayout="column" fxLayoutAlign="center none" *ngFor="let album of albums; index as j"> -->
+              <div drag-scroll-item style="width: 93px; white-space: pre-wrap;"
+                [class.album-selected]="currentAlbums && hightlightRow(currentAlbums, album.id)" fxLayout="column"
+                fxLayoutAlign="center none" *ngFor="let album of albums; index as j">
+                <div><img src="/assets/images/album.png" class="avatar" (click)="changeAlbumHandle(album); this.goToBottom();" />
+                </div>
+                <div class="count-white">{{ album.name }} </div>
+                <div class="artist-white-small"> {{ album.year_released }} </div>
+                <!-- <div class="count-white">{{ currentAlbums | json }} ---   {{ currentAlbums && currentAlbums[j] && currentAlbums[j].id }} -- {{ album.id }}</div> -->
+                <!-- <div class="count-white">{{(currentAlbums | filter : {id: 1})[0].name }}</div> -->
+              </div>
+
+            </div>
+          </drag-scroll>
+        </div>
+      </div>
+      <div class="invert">
+        <span (click)="$resort()">Sort {{ $sorting === 1 ? 'descending' : 'ascending' }}</span>
+      </div>
+      <div fxLayout="column" fxLayoutAlign="stretch" [style.margin-top.px]="15" fxLayoutGap="15px"
+        *ngIf="(currentSongs)">
+        <!-- //SONGS -->
+        <div fxLayout="row" fxLayoutAlign="start start"
+          *ngFor="let song of currentSongs | slice:(pageIndex*pageSize):((pageIndex*pageSize) + pageSize); index as i">
+          <div fxFlex="5"><img src="/assets/images/icon.png" /></div>
+          <div fxFlex fxLayout="column">
+            <div class="song-purple"><a
+                href="https://www.youtube.com/results?search_query={{ song.artist }}+{{ song.name }}"
+                target="_blank">{{ i+1 }}: {{ song.name }}</a></div>
+            <div class="artist-white-small">{{ song.artist }}</div>
+          </div>
+          <div fxFlex="5"><a href="https://www.youtube.com/results?search_query={{ song.artist }}+{{ song.name }}"
+              target="_blank"><img src="/assets/images/link.png" /></a></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <mat-paginator class="paginator" color="warn" (page)="handlePaginationEvent($event)" [length]="songsLength"
+    [pageSize]="pageSize" [showFirstLastButtons]="showFirstLastButtons" [pageIndex]="pageIndex">
+  </mat-paginator>
+</section>

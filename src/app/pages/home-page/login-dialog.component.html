@@ -44,7 +44,7 @@
       </mat-form-field> -->
 
         <mat-form-field class="input-container">
-          <input matInput type="text" name="rname" placeholder="username@email.com " formControlName="alterEgo">
+          <input matInput type="text" name="email" placeholder="username@email.com" formControlName="email" value="raphael.strada@validusholdings.com">
           <!-- <mat-error *ngIf="newHeroForm.controls.alterEgo.errors && form.submitted">
             <ng-template [ngIf]="newHeroForm.controls.alterEgo.errors.required" i18n="@@nameRequired">
               Name is required
@@ -57,7 +57,7 @@
         </mat-form-field>
 
         <mat-form-field class="input-container">
-          <input matInput type="text" name="rname" placeholder="********" formControlName="alterEgo">
+          <input matInput type="password" name="password" placeholder="Password" formControlName="pasword" value="12345678">
           <!-- <mat-error *ngIf="newHeroForm.controls.alterEgo.errors && form.submitted">
             <ng-template [ngIf]="newHeroForm.controls.alterEgo.errors.required" i18n="@@nameRequired">
               Name is required
@@ -68,9 +68,19 @@
             </ng-template>
           </mat-error> -->
         </mat-form-field>
-        <button class="button__purple button-margin-top" mat-flat-button type="submit" (click)="login()"
+        <div class="text--legend">
+          Hey! We're working hard to add people to Trendy as fast as we can, but right now you need an invite to sign up. 
+          Anyone can get one by joining the waitlist, or by asking an existing user for one.
+        </div>
+        
+        <button class="button__purple button-margin-top full-size-width" mat-flat-button type="submit" (click)="login()"
           [mat-dialog-close]="true">
           LOGIN
+        </button>
+        <button class="button__white full-size-width button-margin-top2" mat-stroked-button type="button" (click)="login()"
+          [mat-dialog-close]="true">
+          <mat-icon>facebook</mat-icon>
+          LOGIN WITH FACEBOOK
         </button>
         <!-- <mat-dialog-actions align="end">
           <button mat-button mat-dialog-close>Cancel</button>

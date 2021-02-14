@@ -3,10 +3,19 @@
   <div fxFlex="90" fxFlex.gt-sm="80" class="full-center">
     <div class="half">
       <img alt="" src="/assets/images/jack.png" />
+      <div><span class="artist-title">JACK BLACK</span></div>
+      <div><span class="text--legend">our daily guest</span></div>
+      <h1 class="wrap-description text--regular">
+        We’ve done all the work so you don’t have to. Listen to music channels lovingly curated for all the moments that
+        matter. Perfect for when you just want to sit back and enjoy great tunes!
+      </h1>
+      <div class="text--center">
+        <img src="/assets/images/pagination.png">
+      </div>
 
-      <h1 class="header__title language-link">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt </h1>
+
       <div class="text--center pad-button-logo">
-        <button mat-flat-button class="button__purple">LET’S START</button>
+        <button mat-flat-button class="button__purple" (click)="goToPlayer()">LET’S START</button>
       </div>
 
     </div>
@@ -14,7 +23,6 @@
 
 
     <ng-template #loading>
-      <app-hero-loading></app-hero-loading>
     </ng-template>
   </div>
   <div fxFlex="10" fxFlex.gt-sm="20"></div>

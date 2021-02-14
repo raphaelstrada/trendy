@@ -1,6 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {Hero} from '../../modules/heroes/shared/hero.model';
-import {HeroService} from '../../modules/heroes/shared/hero.service';
 import {AppConfig} from '../../configs/app.config';
 import {Observable} from 'rxjs';
 import {defaultIfEmpty, map} from 'rxjs/operators';
@@ -16,9 +14,8 @@ import { Router } from '@angular/router';
 })
 
 export class HomePageComponent implements OnInit {
-  heroes$: Observable<Hero[]>;
 
-  constructor(private heroService: HeroService, public dialog: MatDialog) {
+  constructor(public dialog: MatDialog) {
   }
   openDialog() {
     const dialogRef = this.dialog.open(LoginDialogComponent);
@@ -28,12 +25,7 @@ export class HomePageComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
-    this.heroes$ = this.heroService.getHeroes().pipe(
-      map((heroes) => heroes.slice(0, AppConfig.topHeroesLimit)),
-      defaultIfEmpty([])
-    );
-  }
+  ngOnInit() {}
 }
 
 @Component({
