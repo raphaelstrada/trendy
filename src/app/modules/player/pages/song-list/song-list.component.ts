@@ -74,7 +74,7 @@ export class SongListComponent implements OnInit {
   }
 
   setCurrentSongs(albums) {
-    let qs: string;
+    let qs = "";
     for (const album of albums) {
       qs += 'album_id=' + album.id + '&';
     }
