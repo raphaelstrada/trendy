@@ -1,8 +1,8 @@
-# Trendy APP to Validus Re ⏰
+# Trendy APP to Validus Re 
 ## How to Use
- > clone
- > npm i
- > npm start
+ clone <br/>
+ npm i<br/>
+ npm start<br/><br/>
 
 > You are working on a team that is building a music database application.  The back end team is currently building some REST services and has provided a prototype of the service to you.  You are responsible for building the front end to display Artist, Album and Song.  The architect has defined the entities as follows:
 
