@@ -10,15 +10,15 @@ export class TrendyService {
   constructor(private http: HttpClient) {
   }
   get headers() {
-    return new HttpHeaders({ 'Content-Type': 'application/json', 'Authorization': `Bearer ${environment.validusSecret}` });
+    return new HttpHeaders({ 'Content-Type': 'application/json', Authorization: `Bearer ${environment.validusSecret}` });
   }
   get headersSpotify() {
     return new HttpHeaders(
       {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${environment.spotifySecret}`,
+        Authorization: `Bearer ${environment.spotifySecret}`,
         'Retry-After': '3600'
-      }); 
+      });
   }
 
   getAllArtistAvatar(artist: string) {
@@ -42,14 +42,14 @@ export class TrendyService {
     });
   }
 
-  getArtistByAlbum(artist_id: string) {
-    return this.http.get(`http://localhost:5000/artists?id=${artist_id}`, {
+  getArtistByAlbum(artistID: string) {
+    return this.http.get(`http://localhost:5000/artists?id=${artistID}`, {
       headers: this.headers
     });
   }
 
-  getAlbumByArtist(artist_id: string) {
-    return this.http.get(`http://localhost:5000/albums?artist_id=${artist_id}`, {
+  getAlbumByArtist(artistID: string) {
+    return this.http.get(`http://localhost:5000/albums?artist_id=${artistID}`, {
       headers: this.headers
     });
   }

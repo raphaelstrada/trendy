@@ -1,14 +1,14 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
 import { TrendyService } from '../../../../shared/services/trendy.service';
 import { PageEvent } from '@angular/material/paginator';
-import { map, take } from "rxjs/operators";
+import { map, take } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 
 
-interface Album { id: number, name: string, artist_id: string, year_released: number };
-interface Artist { id: number, name: string, cover: string };
-interface Song { track: number, name: string };
+interface Album { id: number; name: string; artist_id: string; year_released: number; }
+interface Artist { id: number; name: string; cover: string; }
+interface Song { track: number; name: string; }
 
 @Component({
   selector: 'app-song-list',
@@ -31,12 +31,11 @@ export class SongListComponent implements OnInit {
   currentSongs: Song[];
   allTracks: Song[];
   selectedArtistID: string;
-  $sorting: number = 1;
-  $allSongCount: number = 0;
-
-  songsLength: number = 0;
-  pageSize: number = 10;
-  pageIndex: number = 0;
+  $sorting = 1;
+  $allSongCount = 0;
+  songsLength = 0;
+  pageSize = 10;
+  pageIndex = 0;
   showFirstLastButtons = true;
 
   setAlbums(id: string) {
@@ -45,29 +44,29 @@ export class SongListComponent implements OnInit {
       this.setArtistByAlbum(this.currentAlbums);
       this.setCurrentSongs(this.currentAlbums);
       this.$getAllTracks();
-    })
+    });
   }
 
   $getAllTracks() {
     this.trendyService.getAllTracks().subscribe((response: Song[]) => {
       this.allTracks = response;
       this.$allSongCount = response.length;
-    })
+    });
   }
 
-  setAlbumsByArtist(artist_id: string) {
-    this.trendyService.getAlbumByArtist(artist_id).subscribe((response: Album[]) => {
+  setAlbumsByArtist(artistID: string) {
+    this.trendyService.getAlbumByArtist(artistID).subscribe((response: Album[]) => {
       this.currentAlbums = response;
       this.setCurrentSongs(this.currentAlbums);
       this.setArtistByAlbum(this.currentAlbums);
-    })
+    });
   }
 
   setArtistByAlbum(albums) {
     const { artist_id } = albums[0];
     this.trendyService.getArtistByAlbum(artist_id).subscribe((response: Artist[]) => {
-      this.currentArtist = response
-    })
+      this.currentArtist = response;
+    });
   }
   $resort() {
     this.$sorting = this.$sorting * -1;
@@ -75,8 +74,10 @@ export class SongListComponent implements OnInit {
   }
 
   setCurrentSongs(albums) {
-    let qs: string = "";
-    for (let i: number = 0; i < albums.length; i++) qs += "album_id=" + albums[i].id + "&";
+    let qs: string;
+    for (const album of albums) {
+      qs += 'album_id=' + album.id + '&';
+    }
     this.trendyService.getAlbumTracks(qs)
       .pipe(
         take(1),
@@ -86,14 +87,14 @@ export class SongListComponent implements OnInit {
             .map((song) => {
               song.artist = this.currentArtist && this.currentArtist[0].name;
               return song;
-            })
+            });
         })
       )
       .subscribe((response: Song[]) => {
         this.pageIndex = 0;
-        this.currentSongs = response
+        this.currentSongs = response;
         this.songsLength = response.length;
-      })
+      });
 
   }
 
@@ -134,8 +135,7 @@ export class SongListComponent implements OnInit {
     });
   }
   async ngOnInit() {
-    //initial album
-    const INITIAL_ARTIST_ID = "1";
+    const INITIAL_ARTIST_ID = '1';
     this.selectedArtistID = INITIAL_ARTIST_ID;
     this.setAlbums(this.selectedArtistID);
   }

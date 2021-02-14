@@ -1,4 +1,8 @@
 # Trendy APP to Validus Re ⏰
+## How to Use
+ > clone
+ > npm i
+ > npm start
 
 > You are working on a team that is building a music database application.  The back end team is currently building some REST services and has provided a prototype of the service to you.  You are responsible for building the front end to display Artist, Album and Song.  The architect has defined the entities as follows:
 
@@ -15,7 +19,7 @@ The product owner has mandated the following technical requirements:
 The application architect has mandated that all calls to the any REST services must be authorized using a JWT token in the Authorization header of each request.  The team has provided the following as a sample Bearer token to be used: 
 
 
-<img src="https://i.imgur.com/uWgF1ey.jpg" alt="Main Page" height="480"/>
+<img src="https://i.imgur.com/nSeRIXc.png" alt="Main Page" height="480"/>
 
 ## Key Features
 
@@ -24,9 +28,4 @@ The application architect has mandated that all calls to the any REST services m
 Repo: `https://github.com/raphaelstrada/trendy`
 
 
-## How to Use
-
-*if you prefer, clone repo then npm i and start, or...*
-
-Visit 👉 [https://validusre.herokuapp.com/](https://validusre.herokuapp.com/)
 
